@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+
+# description = "Create a commit message based on stage changes"
+
+#prompt = '''
+
+#Generate a commit message, listing and summarizing the main changes, based on the following git diff:
+
+#'''diff
+#!{git diff ---staged}
+#'''
+
+#Use emojies for type of changes:
+#-for style changes use 🎨
+#-for bug fixes use ✏️
+#-for new features use 🍲
+#-for duc use 📃
+
+#'''

@@ -37,6 +37,7 @@
   --lp-colors-btn-secondary-hover: #dbf0ee;
   --lp-colors-btn-secondary-pressed: #adddd9;
   --lp-colors-btn-text-secondary: #21222e;
+  --lp-colors-btn-border-primary: #adddd9;
   --lp-colors-btn-icon-secondary: #21222e;
   --lp-colors-btn-disabled-inactive: #e6e7ef;
 
@@ -99,7 +100,6 @@
    @media screen and (max-width: 481px) {
       font-size: 1rem;
       line-height: 1.5rem;
-      background-color: var(--lp-colors-icon-warning);
    }
 }
 

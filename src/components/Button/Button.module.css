@@ -1,32 +1,33 @@
 /* base */
 .btn {
-    width: fit-content;
-  display: inline-flex;
+  width: fit-content;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 6px;
+  border-radius: 8px;
   font-family: inherit;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
   gap: 8px; /* Handles spacing between icons and text */
   outline: none;
+  text-wrap: nowrap;
 }
 
 /* Variants */
 .primary {
-  background-color: #007bff;
-  color: #ffffff;
+  background-color: var(--lp-colors-btn-primary);
+  color: var(--lp-colors-btn-text-primary);
 }
 .primary:hover:not(:disabled) {
   background-color: #0056b3;
 }
 
 .secondary {
-  background-color: #f8f9fa;
-  color: #212529;
-  border-color: #dee2e6;
+  background-color: var(--lp-colors-btn-secondary);
+  color: var(--lp-colors-btn-text-secondary);
+  border-color: var(--lp-colors-btn-border-primary);
 }
 .secondary:hover:not(:disabled) {
   background-color: #e2e6ea;

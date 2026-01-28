@@ -34,7 +34,7 @@ const NavBar = ({backButton, viewDashboard, menuIcon}) => {
                             className='view-dashboard-btn'
                             variant="secondary"
                             size='md'>
-                            View RecentList
+                            View Recent List
                             {<ArrowRight aria-label="arrowicon" size={20}/>}
                         </Button>
 

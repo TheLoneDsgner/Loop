@@ -1,20 +1,24 @@
 import myLogo from '../assets/images/Logo-loop.png'
-
 import { ArrowRight } from 'lucide-react';
 import { Camera } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Button from './Button/Button';
 
-const NavBar = ({backButton, viewDashboard}) => {
+
+const NavBar = ({backButton, viewDashboard, menuIcon}) => {
     return ( 
         <nav className='navbar'>
             <div className="navbar-wrapper">
 
                 {/* logo */}
-                <div className="loop-logo">
+                <div className="loop-logo-wrapper">
                     {backButton}
-                                       
-                    {/* <div className="back-icon">{backButton}</div>                     */}
-                    <img src={myLogo} alt="loop logo" />
+
+                    <a href="#" className='lp-logo'>
+                        <img src={myLogo} alt="loop logo"/>
+                    </a>  
+                                    
+
                 </div>
 
                 
@@ -25,13 +29,29 @@ const NavBar = ({backButton, viewDashboard}) => {
                 </div>
 
                 <div className="nav-left-items">
-                    {viewDashboard}
+                    <div className="button-and-menu-container">
+                        <Button
+                            className='view-dashboard-btn'
+                            variant="secondary"
+                            size='md'>
+                            View RecentList
+                            {<ArrowRight aria-label="arrowicon" size={20}/>}
+                        </Button>
+
+                        <div className="nav-menu">
+                            <Menu aria-label="menu icon" size={28} className='nav-menu_icon'/>
+                        </div>
+                    </div>
+                    
+
+
 
                     <div className="nav-links_mobile">
-                        
+                        <div className="nav-menu-icon">
+                            {menuIcon}
+                        </div>
                     </div>
-                </div>
-                               
+                </div>                               
                 
             </div>
         </nav>

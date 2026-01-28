@@ -86,6 +86,11 @@
   --lp-colors-icon-success: #75b578;
   --lp-colors-icon-erorr: #ff6b6b;
   --lp-colors-icon-warning: #e8a746;
+
+  /* font */
+  --lp-type-font-base: 1.125rem;
+  --lp-type-display: 3.5rem;
+  --lp-type-heading: 2.25rem;
 }
 
 *{
@@ -93,14 +98,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Instrument Sans", sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
   width: 100%;
-   
-   @media screen and (max-width: 481px) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-   }
 }
 
 /* @media (prefers-color-scheme: light) {

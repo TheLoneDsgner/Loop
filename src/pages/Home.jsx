@@ -1,8 +1,8 @@
 import NavBar from "../components/NavBar";
-import Button from "../components/Button/Button";
-import { ArrowRight } from "lucide-react";
-import { ChevronLeft } from "lucide-react";
 import Hero from "../components/Hero";
+import Features from "../components/Features";
+import HighlightSection from "../components/Highlight";
+import FooterAndCta from "../components/FooterAndCta";
 
 const Home = () => {
     return ( 
@@ -10,9 +10,13 @@ const Home = () => {
 
             <NavBar />
 
-            <div className="hero">
-                <Hero />
-            </div>
+            <Hero />
+
+            <Features />
+
+            <HighlightSection />
+
+            <FooterAndCta />
         </div>
      );
 }

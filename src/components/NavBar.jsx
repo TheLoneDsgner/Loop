@@ -30,13 +30,15 @@ const NavBar = ({backButton, viewDashboard, menuIcon}) => {
 
                 <div className="nav-left-items">
                     <div className="button-and-menu-container">
-                        <Button
-                            className='view-dashboard-btn'
-                            variant="secondary"
-                            size='md'>
-                            View Recent List
-                            {<ArrowRight aria-label="arrowicon" size={20}/>}
-                        </Button>
+                        <div className="nav-button">
+                            <Button
+                                className='view-dashboard-btn'
+                                variant="secondary"
+                                size='md'>
+                                View Recent List
+                                {<ArrowRight aria-label="arrowicon" size={20}/>}
+                            </Button>
+                        </div>
 
                         <div className="nav-menu">
                             <Menu aria-label="menu icon" size={28} className='nav-menu_icon'/>

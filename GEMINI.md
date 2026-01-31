@@ -1,6 +1,6 @@
 # Project Overview
 
-This is a React application built with Vite. It uses React Router for routing and includes a component library with a `Button` and `NavBar` component. The project is set up with ESLint for linting and Vitest for testing.
+This is a React application built with Vite. It uses React Router for routing and includes a component library with `Button`, `NavBar`, `Features`, and `Hero` components. The project is set up with ESLint for linting and Vitest for testing. It also uses `lucide-react` for icons.
 
 # Building and Running
 
@@ -28,8 +28,6 @@ To run the tests, use the following command:
 npm test
 ```
 
-*TODO: The `test` script is not defined in package.json. Add a `test` script to run the tests.*
-
 # Development Conventions
 
 ## Linting
@@ -55,3 +53,12 @@ The project uses a combination of global CSS files (`src/index.css`, `src/App.cs
 -Alway use colors from variable in the root file.
 -Keep project dependecies minimal.
 -Use relative imports and Not a path alias.
+
+# Dependencies
+
+- **React**: ^19.2.0
+- **React Router**: ^7.12.0
+- **Vite**: ^7.2.4
+- **Vitest**: ^4.0.18
+- **ESLint**: ^9.39.1
+- **lucide-react**: ^0.562.0

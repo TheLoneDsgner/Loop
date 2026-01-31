@@ -1,5 +1,4 @@
 import Button from './Button/Button';
-// import styles from '../App.css'
 import { ArrowRight } from 'lucide-react';
 import heroMockup from '../assets/images/Loop-mockup_home1.png'
 import blurEffect from '../assets/images/blur-effect_loop.svg'

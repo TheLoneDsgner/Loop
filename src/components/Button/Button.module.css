@@ -1,6 +1,5 @@
 /* base */
 .btn {
-  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,10 +40,24 @@
   background-color: #bd2130;
 }
 
+
 /* Sizes */
 .sm { padding: 6px 12px; font-size: 0.75rem; line-height: 1.125rem; }
 .md { padding: 8px 16px; font-size: 0.875rem; line-height: 1.25rem; }
 .lg { padding: 12px 24px; font-size: 1rem; line-height: 1.5rem;}
+
+/* system icon */
+.systemIcon{
+  width: fit-content;
+  padding: 8px;
+  background-color: var(--lp-colors-bg-grey-subtle);
+  color: var(--lp-colors-content-display-text-primary);
+}
+
+.systemIcon:hover:not(:disabled) {
+  background-color: var(--lp-colors-bg-grey-light);
+  border-color: var(--lp-colors-border-default);
+}
 
 /* Icon Only Modifier */
 .iconOnly {

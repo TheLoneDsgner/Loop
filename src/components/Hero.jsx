@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import heroMockup from '../assets/images/Loop-mockup_home1.png'
 import blurEffect from '../assets/images/blur-effect_loop.svg'
 import logoMarkHalf from '../assets/images/Logo-mark-half_loop.svg'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return ( 
@@ -22,18 +23,22 @@ const Hero = () => {
                 </div>
 
                 <div className="hero-actions">
-                    <Button
-                        variant='primary'
-                        size='lg'>
-                            Create a list
-                    </Button>
+                    <Link to="/create-loop">
+                        <Button
+                            variant='primary'
+                            size='lg'>
+                                Create a list
+                        </Button>
+                    </Link>
 
-                    <Button
-                        variant='secondary'
-                        size='lg'>
-                        View recent lists
-                        {<ArrowRight size={24}/>}
-                    </Button>
+                    <Link to="/dashboard">
+                        <Button
+                            variant='secondary'
+                            size='lg'>
+                            View recent lists
+                            {<ArrowRight size={24}/>}
+                        </Button>
+                    </Link>
                 </div>
 
             </div>

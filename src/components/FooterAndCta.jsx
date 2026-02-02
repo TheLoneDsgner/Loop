@@ -1,5 +1,6 @@
 import Button from "./Button/Button";
 import Logo from "../assets/images/Logo-loop.png";
+import { Link } from "react-router-dom";
 
 const FooterAndCta = () => {
     return ( 
@@ -11,9 +12,11 @@ const FooterAndCta = () => {
                         <p>Make a list, share it with a link, and stay in sync—without creating an account.</p>
                     </div>
 
-                    <Button variant="primary" size="lg">
-                        Create a list
-                    </Button>
+                    <Link to="/create-loop">
+                        <Button variant="primary" size="lg">
+                            Create a list
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="footer_wrapper">

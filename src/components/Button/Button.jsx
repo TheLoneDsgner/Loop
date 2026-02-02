@@ -54,7 +54,7 @@ const Button = ({
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['primary', 'secondary', 'danger']),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'danger', 'systemIcon']),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,

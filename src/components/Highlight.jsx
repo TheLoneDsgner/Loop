@@ -1,5 +1,6 @@
 import Button from "./Button/Button";
 import logoIcon from '../assets/images/Logo-icon.svg'
+import { Link } from "react-router-dom";
 
 
 const HighlightSection = () => {
@@ -21,9 +22,11 @@ const HighlightSection = () => {
                             </p>
                         </div>
 
-                        <Button variant="primary" size="lg">
-                            Create a list
-                        </Button>
+                        <Link to="/create-loop">
+                            <Button variant="primary" size="lg">
+                                Create a list
+                            </Button>
+                        </Link>
                     </div>
 
                     <div className="highlight-footer">

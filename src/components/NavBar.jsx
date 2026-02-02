@@ -1,27 +1,16 @@
 import myLogo from '../assets/images/Logo-loop.png'
-import { ArrowRight } from 'lucide-react';
-import { Camera } from 'lucide-react';
-import { Menu } from 'lucide-react';
-import Button from './Button/Button';
+import { Link } from 'react-router-dom';
 
 
-const NavBar = ({backButton, viewDashboard, menuIcon}) => {
+const NavBar = ({menuIcon, navButton, navMenu}) => {
     return ( 
         <nav className='navbar'>
             <div className="navbar-wrapper">
 
                 {/* logo */}
-                <div className="loop-logo-wrapper">
-                    {backButton}
-
-                    <a href="#" className='lp-logo'>
-                        <img src={myLogo} alt="loop logo"/>
-                    </a>  
-                                    
-
-                </div>
-
-                
+                <Link to="/" className='lp-logo'>
+                    <img src={myLogo} alt="loop logo"/>
+                </Link>                
 
                 <div className="nav-links">                
                     <a href="#" className="nav-link_item">Features</a>
@@ -30,25 +19,22 @@ const NavBar = ({backButton, viewDashboard, menuIcon}) => {
 
                 <div className="nav-left-items">
                     <div className="button-and-menu-container">
-                        <div className="nav-button">
-                            <Button
-                                className='view-dashboard-btn'
-                                variant="secondary"
-                                size='md'>
-                                View Recent List
-                                {<ArrowRight aria-label="arrowicon" size={20}/>}
-                            </Button>
-                        </div>
+
+                        <Link to="/dashboard" className='nav-button'>
+                            {navButton}
+                        </Link>
+
 
                         <div className="nav-menu">
-                            <Menu aria-label="menu icon" size={28} className='nav-menu_icon'/>
+                            {navMenu}
                         </div>
+
                     </div>
                     
 
 
 
-                    <div className="nav-links_mobile">
+                    <div className="nav-menu_mobile">
                         <div className="nav-menu-icon">
                             {menuIcon}
                         </div>

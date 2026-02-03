@@ -7,7 +7,7 @@
   --lp-colors-base-light:  #ffffff;
   --lp-colors-base-contrast: #ffffff;
   --lp-colors-base-modal: #ffffff;
-  --lp-colors-base-overlays: rgba(32, 76, 72, 020);
+  --lp-colors-base-overlays: rgba(14, 30, 29, 0.25);
 
   /* content colors */
   --lp-colors-content-display: #21222e;

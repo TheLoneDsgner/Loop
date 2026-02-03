@@ -25,19 +25,24 @@
 
 
 /* Navbar */
+.nav-main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: sticky;
+  z-index: 6;
+  top: 24px;
+  transition: all 0.3s ease-in-out;
+}
 .navbar{
   max-width: 86%;
   min-width: 312px;
   padding: 8px;
   background-color: hsla(0, 0%, 100%, 0.4);
   backdrop-filter: blur(4px);
-  margin-top: 20px;
   border-radius: 16px;
   border: 1px solid var(--lp-colors-border-subtle);
-  position: sticky;
-  z-index: 6;
-  top: 24px;
-  transition: all 0.3s ease-out;
 }
 .navbar-wrapper{
   width: 100%;
@@ -89,19 +94,6 @@
   flex-shrink: 0;
 }
 
-/* .back-icon{
-  width: fit-content;
-  padding: 8px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--lp-colors-bg-grey-subtle);
-  border: 1px solid var(--lp-colors-border-subtle);
-  color: #204C48;
-} */
-
 .nav-links{
   width: fit-content;
   display: flex;
@@ -127,6 +119,7 @@
 }
 
 .nav-left-items{
+  position: relative;
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -141,10 +134,9 @@
 }
 .button-and-menu-container a{
   text-decoration: none;
-
 }
 
-.nav-menu{
+.nav-menu_icon{
   width: fit-content;
   display: none;
   flex-shrink: 0;
@@ -161,6 +153,137 @@
 }
 
 
+/* Nav menu mobile */
+.nav-menu_overlay{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: none;
+  align-items: start;
+  justify-content: end;
+  height: 100vh;
+  /* scroll-behavior: auto; */
+  backdrop-filter: blur(4px);
+  background-color: var(--lp-colors-base-overlays);
+}
+.nav-menu-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 24px 16px;
+  width: 80%;
+  height: 100%;
+  background-color: var(--lp-colors-base-contrast);
+}
+
+.header-menu_mobile{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--lp-colors-base-light);
+}
+.mobile-nav-content{
+  width: 100%;
+  height: 100%;
+  padding: 40px 16px 40px 16px;
+}
+.mobile-nav-links{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.nav-link_item_mobile{
+  width: 100%;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: var(--lp-colors-content-title);
+  background-color: var(--lp-colors-base-contrast);
+  transition: all 0.2s ease-in-out;
+  text-wrap: nowrap;
+  text-decoration: none;
+}
+.nav-button_mobile{
+  margin-top: 24px;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.nav-drop-down_mobile{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 28px;
+  margin-top: 40px;
+  gap: 20px;
+  background-color: var(--lp-colors-bg-grey-subtle);
+  border: 1px solid var(--lp-colors-border-subtle);
+}
+.large-section_mobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 300px;
+  
+  border-radius: 12px;
+  background-color: var(--lp-colors-bg-primary);
+}
+.large-section_mobile span{
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 20px;
+  color: var(--lp-colors-base-light);
+}
+.large-section_mobile img{
+  margin-bottom: -20px;
+}
+
+.features-nav-drop-down_mobile{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 16px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.feature-card_mobile{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  flex-shrink: 0;
+  width: 208px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: var(--lp-colors-base-contrast);
+}
+.feature-card_mobile span{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: var(--lp-colors-content-display-text-primary);
+}
+.feature-card_mobile p{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: var( --lp-colors-content-body);
+}
 
 
 
@@ -711,7 +834,7 @@
   .navbar{
     border-radius: 12px;
   }
-  .nav-menu{
+  .nav-menu_icon{
     display: inline-flex;
   }
   .nav-button{

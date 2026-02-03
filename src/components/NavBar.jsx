@@ -1,10 +1,15 @@
 import myLogo from '../assets/images/Logo-loop.png'
 import { Link } from 'react-router-dom';
+import { ChevronRight, X } from 'lucide-react';
+import Button from './Button/Button';
+import loopLogoBg from '../assets/images/Logo-bg-img.png'
 
 
 const NavBar = ({menuIcon, navButton, navMenu}) => {
-    return ( 
-        <nav className='navbar'>
+    return (
+        <div className='nav-main'>
+        
+            <nav className='navbar'>
             <div className="navbar-wrapper">
 
                 {/* logo */}
@@ -24,25 +29,75 @@ const NavBar = ({menuIcon, navButton, navMenu}) => {
                             {navButton}
                         </Link>
 
+                        {navMenu}
 
-                        <div className="nav-menu">
-                            {navMenu}
-                        </div>
-
-                    </div>
-                    
-
-
-
-                    <div className="nav-menu_mobile">
-                        <div className="nav-menu-icon">
-                            {menuIcon}
-                        </div>
                     </div>
                 </div>                               
                 
             </div>
-        </nav>
+            </nav>
+
+            {/* Nav menu mobile */}
+            <div className="nav-menu_overlay">
+                <div className="nav-menu-container">
+                    <div className="header-menu_mobile">
+                        {/* logo */}
+                        <Link to="/" className='lp-logo'>
+                            <img src={myLogo} alt="loop logo"/>
+                        </Link>
+
+                        <div className="nav-menu_mobile">
+                            <X aria-label="close icon" size={28} className='nav-menu_icon'/>
+                        </div>
+                    </div>
+
+                    <div className="mobile-nav-content">
+                        <div className="mobile-nav-links">
+
+                            <a href="#" className="nav-link_item_mobile">Features</a>
+                            <a href="#" className="nav-link_item_mobile">How It Works</ a>
+                        </div>
+
+                        <div className="nav-button_mobile">
+                            <Link to="/dashboard" className='nav-button_mobile'>
+                                <Button variant='secondary' size='lg'> View recent lists    <ChevronRight />
+                                </Button>
+                            </Link>
+                        </div>
+
+                        <div className="nav-drop-down_mobile">
+                            <div className="large-section_mobile">
+                                <span>Better together, by default.</span>
+
+                                <img src={loopLogoBg} alt="loop logo as background" />
+                            </div>
+
+                            <div className="features-nav-drop-down_mobile">
+                                <div className="feature-card_mobile">
+                                    <span>Browser-native lists</span>
+                                    <p>Create a list right in your browser. It opens in a new tab or sidebar and is ready to type.</p>
+                                </div>
+                                <div className="feature-card_mobile">
+                                    <span>Share with a link</span>
+                                    <p>Copy a link and send it to anyone. They can open the list and start checking items right away.</p>
+                                </div>
+                                <div className="feature-card_mobile">
+                                    <span>Always in sync</span>
+                                    <p>Changes update instantly across devices, so everyone sees the same list at the same time.</p>
+                                </div>
+                                <div className="feature-card_mobile">
+                                    <span>Private by default</span>
+                                    <p>Your lists stay local to your browser until you choose to share them.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    {menuIcon}
+                </div>
+            </div>
+
+        </div> 
      );
 }
  

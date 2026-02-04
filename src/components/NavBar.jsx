@@ -44,7 +44,7 @@ const NavBar = ({navButton, navMenu}) => {
             
             </nav>
 
-            <div className="nav-menu-testing">
+            <div className="nav-menu_mobile-container">
                     {/* Nav menu mobile */}
                     {/* Conditionally display the overlay based on isMenuOpen state */}
                 <div className={`nav-menu_overlay ${isMenuOpen ? 'nav-menu_overlay--open' : ''}`} style={{ display: isMenuOpen ? 'flex' : 'none' }}>

@@ -1,6 +1,7 @@
 import { ChevronLeft } from 'lucide-react';
 import Button from '../components/Button/Button';
 import NavBarDash from '../components/NavBarDash';
+import  './Dashboard.modules.css'
 
 const Dashboard = () => {
     return ( 

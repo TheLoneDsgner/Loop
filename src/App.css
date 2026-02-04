@@ -753,19 +753,6 @@
   color: var(--lp-colors-content-caption);
 }
 
-
-/* dashboard page */
-.dashboard-main, .create-list_main{
-  max-width: 1280px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  background-color: var(--lp-colors-base-light);
-  height: 100vh;
-}
-
 .user-profile{
   display: flex;
   flex-shrink: 0;
@@ -781,16 +768,6 @@
 .user-profile:hover{
   background-color: var(--lp-colors-bg-grey-light);
 }
-
-.content-container{
-  max-width: 86%;
-  min-width: 312px;
-  /* margin-top: ; */
-  max-width: 86%;
-  min-width: 312px;
-  height: 100vh;
-}
-
 
 
 /* media querry */

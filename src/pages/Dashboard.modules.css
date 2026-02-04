@@ -1,0 +1,20 @@
+/* dashboard page */
+.dashboard-main, .create-list_main{
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--lp-colors-base-light);
+  height: 100vh;
+}
+
+.content-container{
+  max-width: 86%;
+  min-width: 312px;
+  margin-top: 20px;
+  max-width: 86%;
+  min-width: 312px;
+  height: 100vh;
+}

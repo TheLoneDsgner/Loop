@@ -32,7 +32,7 @@
   align-items: center;
   position: sticky;
   z-index: 6;
-  top: 24px;
+  top: 16px;
   transition: all 0.3s ease-in-out;
 }
 .navbar{
@@ -119,12 +119,12 @@
 }
 
 .nav-left-items{
-  position: relative;
   width: fit-content;
   display: flex;
   flex-direction: column;
 }
 .button-and-menu-container{
+  position: relative;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -142,7 +142,7 @@
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  padding: 4px;
+  padding: 6px;
   border-radius: 6px;
   background-color: var(--lp-colors-btn-secondary);
   border: 1px solid var(--lp-colors-btn-border-primary);
@@ -152,6 +152,9 @@
   background-color: var(--lp-colors-btn-secondary-hover);
 }
 
+.nav-menu-testing{
+  display: none;
+}
 
 /* Nav menu mobile */
 .nav-menu_overlay{
@@ -164,11 +167,12 @@
   align-items: start;
   justify-content: end;
   height: 100vh;
-  /* scroll-behavior: auto; */
   backdrop-filter: blur(4px);
   background-color: var(--lp-colors-base-overlays);
 }
+
 .nav-menu-container{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -188,6 +192,7 @@
   border-radius: 8px;
   background-color: var(--lp-colors-base-light);
 }
+ 
 .mobile-nav-content{
   width: 100%;
   height: 100%;
@@ -310,7 +315,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 104px;
+    padding-top: 88px;
     padding-bottom: 72px;
     position: relative;
     overflow: hidden;
@@ -806,6 +811,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .nav-menu-testing{
+    display: flex;
+  }
 
   .hero-caption {
     background-color: var(--lp-colors-bg-primary-subtle);
@@ -835,7 +843,7 @@
     border-radius: 12px;
   }
   .nav-menu_icon{
-    display: inline-flex;
+    display: flex;
   }
   .nav-button{
     display: none;
@@ -948,6 +956,11 @@
 
 @media screen and (max-width: 480px) {
   /* nav */
+  .nav-menu-container{
+    padding: 16px;
+    width: 90%;
+  }
+
   .navbar, .hero-container, .features-section{
     max-width: 90%;
   }

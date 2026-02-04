@@ -14,7 +14,7 @@ const Home = () => {
             <NavBar
                 navButton={<Button variant="secondary" size="lg" >View Recent List <ArrowRight aria-label="arrowicon" size={20} /></Button>}
                 
-                navMenu={<Menu aria-label="menu icon" size={28} className='nav-menu_icon'/>}
+                navMenu={<Menu aria-label="menu icon" size={28} />}
 
             />
 

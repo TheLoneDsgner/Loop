@@ -50,7 +50,7 @@ The project uses a combination of global CSS files (`src/index.css`, `src/App.cs
 
 -Do not use semicolon for any Javascript/Typescript.
 -Do not use Tailwind classes in component template.
--Alway use colors from variable in the root file.
+-Always use colors from variable in the root file.
 -Keep project dependecies minimal.
 -Use relative imports and Not a path alias.
 

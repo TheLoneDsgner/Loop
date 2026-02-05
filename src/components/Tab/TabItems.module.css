@@ -1,0 +1,27 @@
+.tabItem{
+    width: fit-content;
+    padding: 12px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    font-weight: 600;
+}
+
+.active {
+    border-bottom: 2px solid var(--lp-colors-border-primary);
+    color: var(--lp-colors-content-display);
+}
+
+.default {
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    color: var(--lp-colors-content-disabled-inactive);
+    transition: all 0.5s ease;
+}
+.default:hover{
+    color: var(--lp-colors-content-display);
+}

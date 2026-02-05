@@ -1,18 +1,20 @@
 import myLogo from '../assets/images/Logo-loop.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CircleUserRound } from 'lucide-react';
 
 
 const NavBarDash = ({backButton, }) => {
+    const navigate = useNavigate();
+
     return ( 
         <nav className='navbar_dashboard'>
             <div className="navbar-wrapper_dashboard">
 
                 {/* logo */}
                 <div className="loop-logo-wrapper">
-                    <Link to="/">
+                    <div onClick={() => navigate(-1)} style={{cursor: 'pointer'}}>
                         {backButton}
-                    </Link>
+                    </div>
 
                     <Link to="/" className='lp-logo'>
                         <img src={myLogo} alt="loop logo"/>

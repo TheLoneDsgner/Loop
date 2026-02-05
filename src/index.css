@@ -73,7 +73,8 @@
   --lp-colors-border-default: #d0d1dc;  
   --lp-colors-border-dark: #4f516d;
   --lp-colors-border-subtle: #e6e7ef;
-  --lp-colors-border-primary: #adddd9;
+  --lp-colors-border-primary: #4db6ac;
+  --lp-colors-border-primary-subtle: #adddd9;
   --lp-colors-border-erorr: #ffd1d1;
   --lp-colors-border-success: #d8eed9;
   --lp-colors-border-warning: #ffe9c8;

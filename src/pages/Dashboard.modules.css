@@ -13,8 +13,33 @@
 .content-container{
   max-width: 86%;
   min-width: 312px;
-  margin-top: 20px;
-  max-width: 86%;
-  min-width: 312px;
+  margin: 20px 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tab-wrapper{
+  width: 100%;
+  /* background-color: var(--lp-colors-bg-grey-subtle); */
+}
+
+.dashboard-container{
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--lp-colors-border-subtle);
+  background-color: var(--lp-colors-bg-grey-subtle);
+  background-color: blueviolet;
+
+}
+
+.lists-container{
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
 }

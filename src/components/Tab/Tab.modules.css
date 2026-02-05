@@ -1,0 +1,14 @@
+.tab{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  border-bottom: 1px solid var(--lp-colors-border-default);
+}
+.tab-links{
+  width: fit-content;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}

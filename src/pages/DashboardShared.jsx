@@ -1,15 +1,15 @@
-import PageHeader from "../components/PageHeader";
+import HeaderDashboard from "../components/HeaderDashboard";
 import { Share } from "lucide-react";
 
 const DashboardShared = () => {
     return ( 
         <div>
-            <PageHeader
+            <HeaderDashboard
                 headerIcon={<Share size={24}/>}
                 title={'Shared lists'}
                 count={'0'}
                 pageDesc={'Lists people share with you, kept in sync.'}
-            ></PageHeader>
+            ></HeaderDashboard>
         </div>
      );
 }

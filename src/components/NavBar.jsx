@@ -1,3 +1,4 @@
+import './NavBar.modules.css'
 import { useState } from 'react' 
 import myLogo from '../assets/images/Logo-loop.png'
 import { Link } from 'react-router-dom';
@@ -70,7 +71,7 @@ const NavBar = ({navButton, navMenu}) => {
 
                             <div className="nav-button_mobile">
                                 <Link to="/dashboard" className='nav-button_mobile'>
-                                    <Button variant='secondary' size='lg'> View recent lists    <ChevronRight />
+                                    <Button variant='secondary' size='lg'> View recent lists    <ChevronRight size={20} />
                                     </Button>
                                 </Link>
                             </div>

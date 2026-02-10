@@ -1,5 +1,5 @@
-import { Library } from "lucide-react";
-import PageHeader from "../components/PageHeader";
+import { Library, Plus } from "lucide-react";
+import PageHeader from "../components/HeaderDashboard";
 import Button from "../components/Button/Button";
 import './Dashboard.modules.css'
 
@@ -13,7 +13,9 @@ const DashboardHome = () => {
                 count={'4'}
                 pageDesc={'Everything you’re planning, kept in sync.'}
 
-                createButton={<Button variant='primary' size='md'>Create a list</Button>}
+                createButton={<Button variant='primary' size='lg'>Create a list</Button>}
+
+                createIcon={<Button iconOnly > <Plus /> </Button>}
             >
             </PageHeader>
 

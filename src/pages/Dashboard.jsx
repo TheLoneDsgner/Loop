@@ -15,8 +15,8 @@ const Dashboard = () => {
         <>
             <div className="dashboard-main">
                 <NavBarDash                
-                    backButton={ <Button variant='systemIcon' size='lg'>
-                        <ChevronLeft size={24} />
+                    backButton={ <Button variant='systemIcon' size='md'>
+                        <ChevronLeft size={20} />
                     </Button>}>                    
                 </NavBarDash>
                 

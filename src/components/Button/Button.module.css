@@ -7,11 +7,12 @@
   border: 1px solid transparent;
   border-radius: 8px;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.2s ease-in-out;
   gap: 8px; /* Handles spacing between icons and text */
   outline: none;
   text-wrap: nowrap;
+  width: fit-content;
 }
 
 /* Variants */
@@ -40,16 +41,16 @@
   background-color: #bd2130;
 }
 
-
 /* Sizes */
-.sm { padding: 6px 12px; font-size: 0.75rem; line-height: 1.125rem; }
-.md { padding: 8px 16px; font-size: 0.875rem; line-height: 1.25rem; }
-.lg { padding: 12px 24px; font-size: 1rem; line-height: 1.5rem;}
+.sm { padding: 0 8px; height: 32px; font-size: 0.75rem; line-height: 1.125rem; }
+.md { padding: 0 12px; height: 40px; font-size: 0.875rem; line-height: 1.25rem; }
+.lg { padding: 0 16px; height: 48px; font-size: 1rem; line-height: 1.5rem;}
 
 /* system icon */
 .systemIcon{
   width: fit-content;
   padding: 8px;
+  aspect-ratio: 1 / 1;
   background-color: var(--lp-colors-bg-grey-subtle);
   color: var(--lp-colors-content-display-text-primary);
 }
@@ -61,9 +62,9 @@
 
 /* Icon Only Modifier */
 .iconOnly {
-  padding: 0;
+  padding: 8px;
   aspect-ratio: 1 / 1;
-  border-radius: 50%; /* Optional: circular icons */
+  border-radius: 8px; /* Optional: circular icons */
 }
 
 /* States */

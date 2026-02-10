@@ -36,7 +36,7 @@ const Hero = () => {
                             variant='secondary'
                             size='lg'>
                             View recent lists
-                            {<ArrowRight size={24}/>}
+                            {<ArrowRight aria-label='arrow right icon' size={20}/>}
                         </Button>
                     </Link>
                 </div>
@@ -44,9 +44,7 @@ const Hero = () => {
             </div>
 
 
-            <div className="hero-image-container">  
-                
-                {/* <img src="#" alt="loop mockup" className="hero-mockup-img" /> */}
+            <div className="hero-image-container">
 
                 <img src={heroMockup} alt="loop mockup" className="hero-mockup-img" />
                 <img src={logoMarkHalf} alt="loop logo mark" className="loop-logo-mark-half-svg" />

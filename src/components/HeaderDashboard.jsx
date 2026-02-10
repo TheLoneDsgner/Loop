@@ -1,9 +1,9 @@
-import './PageHeader.modules.css'
+import './Header.modules.css'
 import { Library } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 
-const PageHeader = ({ title, count, headerIcon, pageDesc, createButton }) => {
+const PageHeader = ({ title, count, headerIcon, pageDesc, createButton, createIcon }) => {
     return ( 
         <div className="header-container">
             <div className="header-content_wrapper">
@@ -16,8 +16,12 @@ const PageHeader = ({ title, count, headerIcon, pageDesc, createButton }) => {
             </div>
             <div className="button-wrapper_pageheader">
                 
-                <Link to='/create-loop'>
+                <Link className='create-button-desk' to='/create-loop'>
                     {createButton}
+                </Link>
+
+                <Link className='create-button-mobile' to='/create-loop'>
+                    {createIcon}
                 </Link>
             </div>
             

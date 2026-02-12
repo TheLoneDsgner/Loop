@@ -1,7 +1,6 @@
 import Button from './Button/Button';
 import './Header.modules.css'
 import { useNavigate } from 'react-router';
-import { Check, Share } from 'lucide-react';
 
 const HeaderCreate = ({createBackButton, headerText, shareBtn, saveBtn}) => {
     const navigate = useNavigate();
@@ -13,14 +12,13 @@ const HeaderCreate = ({createBackButton, headerText, shareBtn, saveBtn}) => {
                         {createBackButton}
                 </div>
 
-                <span>{headerText}</span>
+                <span className='header-text'>{headerText}</span>
             </div>
+
             <div className='btn-header'>
                 {shareBtn}
                 {saveBtn}
-            </div>
-            
-            
+            </div>         
             
         </div>
      );

@@ -1,15 +1,40 @@
 .create-list_main{
     background-color: blueviolet;
     width: 100%;
-    height: 100lvh;
+    border: 2px solid red;
 }
 .create_container{
     width: 86%;
     height: 100%;
-    margin: 24px 0;
-    border: 2px solid red;
+    margin: 16px 0;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
 }
 
  .header-buttons{
     width: fit-content;
+ }
+
+ .list-and-form_container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+ }
+
+ .list_container{
+    max-width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: aquamarine;
+ }
+ .form_wrapper{
+    max-width: 35%;
+    height: 100px;
+    background-color: blueviolet;
  }

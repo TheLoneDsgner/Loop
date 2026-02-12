@@ -66,7 +66,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8px;
+    gap: 16px;
 }
 .header-left-items{
     width: fit-content;
@@ -79,7 +79,14 @@
 .header-back-btn{
     width: fit-content;
 }
-
+.header-text{
+    width: fit-content;
+    text-wrap: nowrap;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.875rem;
+    color:  var(--lp-colors-content-display-text-primary);
+}
 .btn-header{
     display: flex;
     width: fit-content;

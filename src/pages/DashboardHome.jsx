@@ -8,12 +8,12 @@ const DashboardHome = () => {
     return ( 
         <div>
             <PageHeader
-                headerIcon={<Library size={24}/>}
+                headerIcon={<Library size={20}/>}
                 title={'Your lists'}
                 count={'4'}
                 pageDesc={'Everything you’re planning, kept in sync.'}
 
-                createButton={<Button variant='primary' size='lg'>Create a list</Button>}
+                createButton={<Button variant='primary' size='md'>Create a list</Button>}
 
                 createIcon={<Button iconOnly > <Plus /> </Button>}
             >

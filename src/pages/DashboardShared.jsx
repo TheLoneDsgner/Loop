@@ -5,7 +5,7 @@ const DashboardShared = () => {
     return ( 
         <div>
             <HeaderDashboard
-                headerIcon={<Share size={24}/>}
+                headerIcon={<Share size={20}/>}
                 title={'Shared lists'}
                 count={'0'}
                 pageDesc={'Lists people share with you, kept in sync.'}

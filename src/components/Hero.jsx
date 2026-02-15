@@ -1,7 +1,6 @@
 import Button from './Button/Button';
 import { ArrowRight } from 'lucide-react';
 import heroMockup from '../assets/images/Loop-mockup_home1.png'
-import blurEffect from '../assets/images/blur-effect_loop.svg'
 import logoMarkHalf from '../assets/images/Logo-mark-half_loop.svg'
 import { Link } from 'react-router-dom';
 

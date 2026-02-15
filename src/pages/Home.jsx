@@ -12,7 +12,7 @@ const Home = () => {
         <div className="home">
 
             <NavBar
-                navButton={<Button variant="secondary" size="lg" >View Recent List <ArrowRight aria-label="arrowicon" size={20} /></Button>}
+                navButton={<Button variant="secondary" size="md" >View Recent List <ArrowRight aria-label="arrowicon" size={20} /></Button>}
                 
                 navMenu={<Menu aria-label="menu icon" size={32} />}
 

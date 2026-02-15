@@ -10,13 +10,15 @@ const TabItem = ({
 
     const tabItemClassess = [
         styles.tabItem,
-        styles[state]
+        styles[state],
+        className
     ].join(' ').trim();
 
 
     return ( 
         <div
-            className={tabItemClassess}>
+            className={tabItemClassess}
+            {...props}>
             {children}
         </div>
      );

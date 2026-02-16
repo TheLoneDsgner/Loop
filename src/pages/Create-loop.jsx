@@ -1,8 +1,10 @@
 import './CreateLoop.modules.css'
+
 import React, { useState } from 'react'
 import NavBarDash from "../components/NavBarDash";
 import Button from "../components/Button/Button";
-import { ChevronLeft, Check, Share, ExternalLink, Plus, Info, Loader, Link } from "lucide-react"; // Added Link
+import { ChevronLeft, Check, Share, Plus, Info, Loader, } from "lucide-react";
+import { Link } from 'react-router';
 import HeaderCreate from '../components/HeaderCreate';
 import TextField from '../components/TextField';
 import ListItem from '../components/ListItem';
@@ -17,6 +19,10 @@ const CreateList = ( ) => {
     const [showSuccessToast, setShowSuccessToast] = useState(false) // New state for success toast
     const [showShareModal, setShowShareModal] = useState(false) // State to control modal visibility
     const [showCopiedMessage, setShowCopiedMessage] = useState(false) // New state for copied message
+    const [listTitle, setListTitle] = useState('')
+    const [listDescription, setListDescription] = useState('')
+    const [titleError, setTitleError] = useState(false)
+    const [isCreateNewListButtonActive, setIsCreateNewListButtonActive] = useState(false)
 
     const handleSaveItem = () => {
         if (newItemText.trim()) {
@@ -47,16 +53,51 @@ const CreateList = ( ) => {
     }
 
     const handleSaveList = () => {
+        if (!listTitle.trim()) {
+            setTitleError(true)
+            return
+        }
+
         setIsSaving(true)
+        // Simulate API call or data saving
         setTimeout(() => {
             setIsSaving(false)
             setIsDirty(false) // List is no longer dirty after saving
             setShowSuccessToast(true) // Show success toast
+            setTitleError(false) // Clear any title error on successful save
+
+            const listData = {
+                id: 0, // Placeholder, will be calculated
+                title: listTitle.trim(),
+                description: listDescription.trim(),
+                items: listItems,
+                category: 'Your List', // Assuming this is for user-created lists
+            }
+
+            // Retrieve existing lists from local storage
+            const existingListsJSON = localStorage.getItem('user_loops') // Changed key to user_loops
+            let existingLists = existingListsJSON ? JSON.parse(existingListsJSON) : []
+
+            // Generate new ID
+            const newId = existingLists.length > 0 
+                ? Math.max(...existingLists.map(list => list.id)) + 1
+                : 1
+            
+            listData.id = newId
+
+            // Add the new list to the array
+            existingLists.push(listData)
+
+            // Save the updated array back to local storage
+            localStorage.setItem('user_loops', JSON.stringify(existingLists)) // Changed key to user_loops
+
+            console.log('My loop saved to local storage:', listData)
 
             // Hide success toast after 3 seconds
             setTimeout(() => {
                 setShowSuccessToast(false)
             }, 3000)
+            setIsCreateNewListButtonActive(true) // Activate "Create New List" button on successful save
         }, 1500)
     }
 
@@ -74,6 +115,17 @@ const CreateList = ( ) => {
             console.error('Failed to copy: ', err);
         });
     };
+
+    const handleClearForm = () => {
+        setListTitle('')
+        setListDescription('')
+        setListItems([])
+        setIsDirty(false)
+        setShowSuccessToast(false)
+        setTitleError(false)
+        setNewItemText('') // Clear new item text field as well
+        setIsCreateNewListButtonActive(false) // Deactivate "Create New List" button after clearing form
+    }
 
         return ( 
             <div className="create-list_main">
@@ -127,7 +179,7 @@ const CreateList = ( ) => {
                                 </div>
 
                                 <div className="right-items_header">
-                                    <Button size='md' variant='secondary'>Preview <ExternalLink size={20} /> </Button>
+                                    <Button disabled={!isCreateNewListButtonActive} size='md' variant='primary' onClick={handleClearForm}> Create New List </Button>
                                 </div>
                             </div>
     
@@ -193,8 +245,21 @@ const CreateList = ( ) => {
                                     <span className='form-header'>Your list title</span>
 
                                     <div className="text-field-wrapper">
-                                        <TextField placeholder={"List title"} />
-                                        <TextField placeholder={"List description (optional)"} />
+                                        <TextField 
+                                            placeholder={"List title"} 
+                                            value={listTitle} 
+                                            onChange={(e) => {
+                                                setListTitle(e.target.value)
+                                                setTitleError(false) // Clear error when user starts typing
+                                            }}
+                                            isError={titleError}
+                                            errorMessage="List title is required"
+                                        />
+                                        <TextField 
+                                            placeholder={"List description (optional)"} 
+                                            value={listDescription}
+                                            onChange={(e) => setListDescription(e.target.value)}
+                                        />
                                     </div>
                                 </div>    
 

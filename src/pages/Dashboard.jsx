@@ -26,10 +26,16 @@ const Dashboard = () => {
                     </div>
 
                     <div className="dashboard-container">
-                        {activeTab === 'home' && <DashboardHome />}
-                        {activeTab === 'shared' && <DashboardShared />}
-                    </div>
 
+                        {activeTab === 'home' && <DashboardHome />}
+
+                        {activeTab === 'shared' && <DashboardShared />}
+
+                        <div className="footer_dashboard">
+                            <p>Planning together works better.  Share a list when you need help.</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </>

@@ -75,9 +75,7 @@ const CreateList = ( ) => {
         });
     };
 
-
         return ( 
-
             <div className="create-list_main">
 
                 <NavBarDash />    

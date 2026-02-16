@@ -4,8 +4,7 @@ import Features from "../components/Features";
 import HighlightSection from "../components/Highlight";
 import FooterAndCta from "../components/FooterAndCta";
 import Button from "../components/Button/Button";
-import { ArrowRight } from "lucide-react";
-import { Menu } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 
 const Home = () => {
     return ( 

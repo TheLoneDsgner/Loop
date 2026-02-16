@@ -9,7 +9,6 @@
   background-color: var(--lp-colors-base-light);
   height: 100vh;
 }
-
 .content-container{
   max-width: 86%;
   min-width: 312px;
@@ -19,21 +18,33 @@
   flex-direction: column;
   gap: 8px;
 }
-
 .tab-wrapper{
   width: 100%;
-  /* background-color: var(--lp-colors-bg-grey-subtle); */
 }
-
 .dashboard-container{
   width: 100%;
   height: 100%;
-  display: fle;
+  display: flex;
   flex-direction: column;
+  align-items: center;
   border-radius: 12px;
   border: 1px solid var(--lp-colors-border-subtle);
   background-color: var(--lp-colors-bg-grey-subtle);
+  overflow: hidden;
+}
 
+
+/* dashboard home container */
+.dashboard-home-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.dashboard-home{
+  width: 100%;
 }
 
 .lists-container{
@@ -41,6 +52,82 @@
   padding: 20px 24px;
   display: flex;
   flex-direction: column;
+}
+
+
+/* dashboard shared container */
+.dashboard-shared-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+/* emty state dashboard home*/
+.empty-state_dashboard{
+  width: 32%;
+  margin: 80px 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.image-and-text_empty-state{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+.image-wrapper_empty-state{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--lp-colors-icon-default);
+}
+
+.text-wrapper_empty-state{
+  width: auto;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+.text-wrapper_empty-state span{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: var(--lp-colors-content-header);
+}
+.text-wrapper_empty-state p{
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 400;
+  color: var(--lp-colors-content-body);
+}
+
+.action-empty-state_dashboard{
+  width: fit-content;
+}
+.action-empty-state_dashboard a{
+  text-decoration: none;
+}
+
+/* dashboard footer */
+.footer_dashboard{
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: var(--colors-content-secondary-body, #4F516D);
+  padding: 12px 24px 16px 24px;
+  border-top: 1px solid var(--lp-colors-border-subtle);
+  background-color: var(--lp-colors-base-contrast);
+  backdrop-filter: blur(6px);
 }
 
 

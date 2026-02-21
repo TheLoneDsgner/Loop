@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './ListItem.modules.css'
+import '../List-items/ListItem.modules.css'
 import { GripVertical, Trash } from "lucide-react";
 
 const ListItem = ({item, onRemove, index, onEdit}) => {

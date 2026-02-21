@@ -18,7 +18,7 @@
     border: 1px solid var(--lp-colors-border-subtle);
     background-color: var(--lp-colors-base-contrast);
     overflow: hidden;
-
+    transition: all 0.5ms ease-out;
 }
 input{
     outline: 0;
@@ -37,7 +37,7 @@ input::placeholder{
     border: 1px solid var(--lp-colors-border-primary);
 }
 .input-group:has(input:not(:placeholder-shown)){
-    border: 1px solid var(--lp-colors-border-primary);
+    border: 2px solid var(--lp-colors-border-primary);
 }
 
 .bottom-text{
@@ -50,12 +50,14 @@ input::placeholder{
 
 /* Error styles */
 .input-group .input-error {
-    border-color: var(--lp-colors-danger-500); /* Example red color */
+    border-color: 1px solid var(--lp-colors-border-erorr); /* Example red color */
+    /* background-color: brown; */
 }
 
 .error-message {
     font-size: 0.75rem;
+    font-weight: 500;
     line-height: 1rem;
-    color: var(--lp-colors-danger-500); /* Example red color */
+    color: var(--lp-colors-feedback-error);
     margin-top: 4px;
 }

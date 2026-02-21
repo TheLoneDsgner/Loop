@@ -4,7 +4,7 @@ const TextField = ( {label, bottomText, placeholder, addItemBtn, value, onChange
     return ( 
         <div className="text-field">
             
-            <label className='label_text-field' htmlFor="input">{label}</label>
+            <label className='label_text-field'>{label}</label>
 
             <div className="input-group">
                 <input 

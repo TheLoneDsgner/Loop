@@ -7,7 +7,7 @@ import { ChevronLeft, Check, Share, Plus, Info, Loader, } from "lucide-react";
 import { Link } from 'react-router';
 import HeaderCreate from '../components/HeaderCreate';
 import TextField from '../components/TextField';
-import ListItem from '../components/ListItem';
+import ListItem from '../components/List-items/ListItem';
 import Modal from '../components/Modals/Modal';
 
 const CreateList = ( ) => {
@@ -23,6 +23,7 @@ const CreateList = ( ) => {
     const [listDescription, setListDescription] = useState('')
     const [titleError, setTitleError] = useState(false)
     const [isCreateNewListButtonActive, setIsCreateNewListButtonActive] = useState(false)
+    const [listId, setListId] = useState(null) // New state to hold the ID of the current list
 
     const handleSaveItem = () => {
         if (newItemText.trim()) {
@@ -66,33 +67,48 @@ const CreateList = ( ) => {
             setShowSuccessToast(true) // Show success toast
             setTitleError(false) // Clear any title error on successful save
 
-            const listData = {
-                id: 0, // Placeholder, will be calculated
-                title: listTitle.trim(),
-                description: listDescription.trim(),
-                items: listItems,
-                category: 'Your List', // Assuming this is for user-created lists
-            }
-
-            // Retrieve existing lists from local storage
-            const existingListsJSON = localStorage.getItem('user_loops') // Changed key to user_loops
-            let existingLists = existingListsJSON ? JSON.parse(existingListsJSON) : []
-
-            // Generate new ID
-            const newId = existingLists.length > 0 
-                ? Math.max(...existingLists.map(list => list.id)) + 1
-                : 1
+                        let currentListId = listId
+                        const listData = {
+                            title: listTitle.trim(),
+                            description: listDescription.trim(),
+                            items: listItems,
+                            category: 'Your List', // Assuming this is for user-created lists
+                        }
             
-            listData.id = newId
-
-            // Add the new list to the array
-            existingLists.push(listData)
-
-            // Save the updated array back to local storage
-            localStorage.setItem('user_loops', JSON.stringify(existingLists)) // Changed key to user_loops
-
-            console.log('My loop saved to local storage:', listData)
-
+                        // Retrieve existing lists from local storage
+                        const existingListsJSON = localStorage.getItem('user_loops') // Changed key to user_loops
+                        let existingLists = existingListsJSON ? JSON.parse(existingListsJSON) : []
+            
+                        if (currentListId === null) {
+                            // This is a new list, generate a new ID
+                            const newId = existingLists.length > 0
+                                ? Math.max(...existingLists.map(list => list.id)) + 1
+                                : 1
+            
+                            listData.id = newId
+                            existingLists.push(listData)
+                            setListId(newId) // Set the new ID for the current list
+                            console.log('New loop saved to local storage:', listData)
+                        } else {
+                            // This is an existing list, find and update it
+                            const listIndex = existingLists.findIndex(list => list.id === currentListId)
+                            if (listIndex > -1) {
+                                existingLists[listIndex] = { ...existingLists[listIndex], ...listData }
+                                console.log('Existing loop updated in local storage:', existingLists[listIndex])
+                            } else {
+                                // Fallback: if somehow listId exists but list not found, treat as new
+                                const newId = existingLists.length > 0
+                                    ? Math.max(...existingLists.map(list => list.id)) + 1
+                                    : 1
+                                listData.id = newId
+                                existingLists.push(listData)
+                                setListId(newId)
+                                console.log('Loop not found, saved as new to local storage:', listData)
+                            }
+                        }
+            
+                        // Save the updated array back to local storage
+                        localStorage.setItem('user_loops', JSON.stringify(existingLists))
             // Hide success toast after 3 seconds
             setTimeout(() => {
                 setShowSuccessToast(false)
@@ -125,6 +141,7 @@ const CreateList = ( ) => {
         setTitleError(false)
         setNewItemText('') // Clear new item text field as well
         setIsCreateNewListButtonActive(false) // Deactivate "Create New List" button after clearing form
+        setListId(null) // Reset listId when creating a new list
     }
 
         return ( 
@@ -253,8 +270,9 @@ const CreateList = ( ) => {
                                                 setTitleError(false) // Clear error when user starts typing
                                             }}
                                             isError={titleError}
-                                            errorMessage="List title is required"
+                                            errorMessage="Give your list a title"
                                         />
+                                        
                                         <TextField 
                                             placeholder={"List description (optional)"} 
                                             value={listDescription}

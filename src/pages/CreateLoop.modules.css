@@ -39,6 +39,7 @@
    justify-content: space-between;
    align-items: center;
 }
+
 .left-items_header{
    width: fit-content;
    display: flex;
@@ -46,6 +47,30 @@
    gap: 8px;
    align-items: center;
 }
+.list-title{
+   width: fit-content;
+   text-wrap: nowrap;
+   font-size: 1.125rem;
+   line-height: 1.5rem;
+   font-weight: 600;
+}
+.list-counter{
+   width: 28px;
+   height: 28px;
+   overflow: hidden;
+   display: flex;
+   flex-shrink: 0;
+   align-items: center;
+   justify-content: center;
+   padding: 4px;
+   border-radius: 99px;
+   background-color: var(--lp-colors-base-contrast);
+   border: 1px solid var(--lp-colors-border-subtle);
+   color: var(--lp-colors-content-caption);
+   font-size: 0.875rem;
+   font-weight: 400;
+}
+
 .right-items_header{
    width: fit-content;
 }

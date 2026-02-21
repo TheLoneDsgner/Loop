@@ -34,7 +34,6 @@ const Dashboard = () => {
                         <div className="footer_dashboard">
                             <p>Planning together works better.  Share a list when you need help.</p>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -1,9 +1,7 @@
 import './NavBar.modules.css'
 import myLogo from '../assets/images/Logo-loop.png'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import { CircleUserRound } from 'lucide-react';
-
-
 const NavBarDash = ({backButton, }) => {
     const navigate = useNavigate();
 

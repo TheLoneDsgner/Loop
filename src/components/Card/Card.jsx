@@ -1,15 +1,15 @@
-import { ExternalLink } from 'lucide-react';
-import Button from '../Button/Button';
+import React from 'react'; // Import React for React.cloneElement
 import './Card.modules.css'
 import ListItemCard from '../List-items/ListItemCard';
-const Card = () => {
+
+const Card = ({cardItem, viewItemBtn, onViewItemClick }) => { // Add onViewItemClick prop
     return ( 
         <div className='list-card'>
 
             {/* header list card */}
             <div className="header_list-card">
                 <div className="header-text_list-card">
-                    <span className='header-title_list-card'>Weekly groceries</span>
+                    <span className='header-title_list-card'>{cardItem.title}</span>
 
                     <div className="list-stats_list-card">
                         <div className="stats-slider">
@@ -25,22 +25,21 @@ const Card = () => {
                 </div>
 
                 <div className="header-btn_list-card">
-                    <Button iconOnly size='md' variant='secondary'> <ExternalLink size={20} /> </Button>
+                    {React.cloneElement(viewItemBtn, { onClick: onViewItemClick })}
                 </div>
             </div>
 
             {/* list items */}
             <div className="list-items_list-card">
                 <div className="list-counter_list-items">
-                    <span className='list-label_list-items'>Lists</span>
-                    <span className='counter_list-items'>0</span>
+                    <span className='list-label_list-items'>Items</span>
+                    <span className='counter_list-items'>{cardItem.items.length}</span>
                 </div>
 
                 <div className="list-items_wrapper">
-                    <ListItemCard />
-                    <ListItemCard />
-                    <ListItemCard />
-                    <ListItemCard />
+                    {cardItem && cardItem.items && cardItem.items.map((item, index) => (
+                        <ListItemCard key={index} item={item} />
+                    ))}
                 </div>
 
             </div>

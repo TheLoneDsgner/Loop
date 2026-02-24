@@ -1,4 +1,4 @@
-import Card from "../components/Card/Card";
+// import Card from "../components/Card/Card";
 import HeaderDashboard from "../components/HeaderDashboard";
 import { Share,  } from "lucide-react";
 
@@ -29,10 +29,10 @@ const DashboardShared = () => {
                 </div>
 
                 <div className="lists-shared-container">
+                    {/* <Card></Card>
                     <Card></Card>
                     <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
+                    <Card></Card> */}
 
                 </div>
 

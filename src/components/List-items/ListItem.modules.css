@@ -37,6 +37,7 @@
     line-height: 1.4rem;
     font-weight: 500;
     color: var(--lp-colors-content-title);
+    text-transform: capitalize;
 }
 
 .item-enter-active {

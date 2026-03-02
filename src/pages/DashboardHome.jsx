@@ -88,6 +88,7 @@ const DashboardHome = () => {
                             <div className="image-wrapper_empty-state">
                                 <Library size={40} />
                             </div>
+                            
                             <div className="text-wrapper_empty-state">
                                 <span>Start with a list</span>
                                 <p>Groceries, errands, or plans, write it down and share it when you’re ready.</p>

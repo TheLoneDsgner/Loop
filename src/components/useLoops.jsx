@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 const LOCAL_STORAGE_KEY = 'user_loops';
 
 const useLoops = () => {
-  // Initialize state with data from localStorage, or an empty array if not found/invalid
   const [loops, setLoops] = useState(() => {
     try {
       const storedLoops = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -13,17 +12,27 @@ const useLoops = () => {
       return [];
     }
   });
+  const [saveError, setSaveError] = useState(null);
 
-  // Effect to update localStorage whenever the 'loops' state changes
   useEffect(() => {
     try {
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(loops));
+      // On a successful save, always ensure the error state is null.
+      setSaveError(null);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    
     } catch (error) {
-      console.error("Error saving user loops to localStorage:", error);
+      const errorMessage = "Failed to save loops to localStorage.";
+      console.error(errorMessage, error);
+      setSaveError(errorMessage);
     }
-  }, [loops]); // Depend on 'loops' state
+  }, [loops, setSaveError]);
 
-  return [loops, setLoops];
+  const clearSaveError = () => {
+    setSaveError(null);
+  };
+
+  return [loops, setLoops, saveError, clearSaveError];
 };
 
 export default useLoops;

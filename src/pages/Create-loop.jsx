@@ -9,11 +9,14 @@ import TextField from '../components/TextField';
 import ListItem from '../components/List-items/ListItem';
 import ModalShare from '../components/Modals/ModalShare';
 import { useLocation } from 'react-router-dom'; // Import useLocation
+import ErrorModal from '../components/EdgeCases/ErrorModal'; // Import the new ErrorModal
+
+import shareImage from '../assets/icons/Share-img.svg'
 
 import useLoops from '../components/useLoops'; // Import useLoops hook
 
 const CreateList = () => {
-    const [loops, setLoops] = useLoops(); // Use the hook
+    const [loops, setLoops, saveError, clearSaveError] = useLoops(); // Updated to get error state
     const [newItemText, setNewItemText] = useState('')
     const [listItems, setListItems] = useState([])
     const [editingItemIndex, setEditingItemIndex] = useState(null)
@@ -28,6 +31,7 @@ const CreateList = () => {
     const [isCreateNewListButtonActive, setIsCreateNewListButtonActive] = useState(false)
     const [listId, setListId] = useState(null)
     const location = useLocation(); // Initialize useLocation
+    const [showSaveErrorModal, setShowSaveErrorModal] = useState(false); // State for the error modal
 
     useEffect(() => {
         if (location.state && location.state.loopToEdit) {
@@ -40,6 +44,15 @@ const CreateList = () => {
             }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.state]);
+
+    // Effect to handle save errors
+    useEffect(() => {
+        if (saveError) {
+            setShowSaveErrorModal(true);
+            setIsSaving(false); // Ensure loading indicator is off
+            setShowSuccessToast(false); // Hide success message
+        }
+    }, [saveError]);
 
     const handleSaveItem = () => {
         if (newItemText.trim()) {
@@ -75,12 +88,9 @@ const CreateList = () => {
         }
 
         setIsSaving(true)
+        // The setTimeout simulates a network delay. The actual save happens almost instantly
+        // when setLoops is called, and the error will be caught by the useLoops hook.
         setTimeout(() => {
-            setIsSaving(false)
-            setIsDirty(false)
-            setShowSuccessToast(true)
-            setTitleError(false)
-
             const listData = {
                 title: listTitle.trim(),
                 description: listDescription.trim(),
@@ -102,10 +112,18 @@ const CreateList = () => {
                 setLoops(updatedLoops)
             }
 
-            setTimeout(() => {
-                setShowSuccessToast(false)
-            }, 3000)
-            setIsCreateNewListButtonActive(true)
+            // Don't assume success here. The useEffect for `saveError` will handle failure.
+            // If no error occurs, the UI will update as planned.
+            if (!saveError) {
+                setIsSaving(false)
+                setIsDirty(false)
+                setShowSuccessToast(true)
+                setTitleError(false)
+                setTimeout(() => {
+                    setShowSuccessToast(false)
+                }, 3000)
+                setIsCreateNewListButtonActive(true)
+            }
         }, 1500)
     }
 
@@ -140,6 +158,11 @@ const CreateList = () => {
         setIsCreateNewListButtonActive(false)
         setListId(null)
     }
+
+    const handleCloseErrorModal = () => {
+        setShowSaveErrorModal(false);
+        clearSaveError();
+    };
 
     return (
         <div className="create-list_main">
@@ -178,6 +201,7 @@ const CreateList = () => {
                         </div>
                     }
                 > </HeaderCreate>
+                
                 <div className="list-and-form_container">
                     <div className="list_container">
                         <div className="header_list-container">
@@ -278,6 +302,7 @@ const CreateList = () => {
                 </div>
             </div>
 
+            {/* share modal */}
             <ModalShare
                 isOpen={showShareModal}
                 onClose={() => setShowShareModal(false)}
@@ -300,6 +325,19 @@ const CreateList = () => {
                     )}
                 </div>
             </ModalShare>
+            
+            {/* save failed modal */}
+            <ErrorModal
+                isOpen={showSaveErrorModal}
+                onClose={handleCloseErrorModal}
+                showCloseButton={false}
+                modalImage={shareImage} // Pass the Lucide icon directly
+                title="Saving Failed"
+                description="We couldn't save your list. This might be due to your browser's storage limitations or privacy settings."
+                actionButtonText="Got it" // Updated prop name
+                onActionButtonClick={handleCloseErrorModal} // Updated prop name
+                showActionButton={true} // Explicitly setting it, though true is default
+            />
         </div>
     );
 }

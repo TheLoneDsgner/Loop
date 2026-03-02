@@ -1,0 +1,108 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--lp-colors-base-overlays);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: var(--lp-colors-base-modal);
+  padding: 16px; /* From var(--padding/medium,16px) */
+  border-radius: 20px; /* From var(--radius/medium,20px) */
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* From var(--spacing-v/component-default,16px) */
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Changed to space-between for image and close button */
+  align-items: flex-start;
+  width: 100%;
+}
+
+.modalImageContainer {
+  background-color: var(--lp-colors-base-light); /* bg-white */
+  overflow: hidden; /* overflow-clip */
+  flex-shrink: 0; /* shrink-0 */
+  width: 88px; /* size-[88px] */
+  height: 88px; /* size-[88px] */
+  position: relative;
+  display: flex; /* Added to center the image if it's smaller */
+  justify-content: center; /* Added to center the image if it's smaller */
+  align-items: center; /* Added to center the image if it's smaller */
+  color: var(--lp-colors-icon-warning-strong);
+}
+
+.modalImage {
+  display: block; /* block */
+  max-width: 100%; /* Ensure it fits container */
+  max-height: 100%; /* Ensure it fits container */
+  object-fit: contain; /* To ensure the image is scaled properly within the container */
+}
+
+.closeButton {
+  background-color: var(--lp-colors-bg-grey-subtle);
+  border: none;
+  border-radius: 8px; /* From var(--radius/2x-small,8px) */
+  padding: 8px; /* From var(--padding/x-small,8px) */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--lp-colors-icon-default);
+}
+
+.closeButton:hover {
+  background-color: var(--lp-colors-btn-secondary-hover);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* From var(--spacing-v/between-text,4px) */
+  align-items: flex-start;
+  width: 100%;
+}
+
+.title {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--lp-colors-content-display);
+  line-height: 30px;
+  white-space: pre-wrap;
+  width: 100%;
+  margin: 0;
+}
+
+.description {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--lp-colors-content-body);
+  line-height: 20px;
+  white-space: pre-wrap;
+  width: 100%;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 16px; /* From var(--spacing-h/component-default,16px) */
+  width: 100%;
+  justify-content: flex-start;
+}

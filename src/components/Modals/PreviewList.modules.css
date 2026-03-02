@@ -118,6 +118,7 @@
     padding: 8px;
     overflow-y: auto;
     scrollbar-width: none;
+    text-transform: capitalize;
 }
 
 /* preview modal footer */

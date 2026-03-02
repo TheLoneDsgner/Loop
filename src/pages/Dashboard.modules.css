@@ -18,7 +18,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .tab-wrapper{
@@ -57,7 +57,6 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
-
 }
 
 /* List container */
@@ -65,13 +64,11 @@
   width: 100%;
   padding: 8px 24px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(328px, 0fr));
+  grid-template-columns: repeat(auto-fit, minmax(328px, 1fr));
   grid-auto-rows: auto;
-  /* max-height: 364px; */
   gap: 20px;
-  /* overflow-y: auto; */
-  /* scrollbar-width: none; */
 }
+
 .list-test{
   width: 400px;
   height: 348px;
@@ -132,8 +129,6 @@
 }
 
 
-
-
 /* dashboard shared container */
 .dashboard-shared-container{
   width: 100%;
@@ -170,7 +165,7 @@
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  display: none;
+  display: flex;
 }
 
 .dashboard-shared{
@@ -198,21 +193,60 @@
 
 
 /* media querry */
+@media screen and (max-width: 1024px) {
+
+  /* List container */
+  .lists-container{
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
+
+}
+
 @media screen and (max-width: 768px) {
+
   .content-container{
     max-width: 88%;
     min-width: 312px;
+    margin: 8px 0 16px 0;
+    gap: 4px;
   }
-  .content-container{
-    margin: 16px 0 16px 0;
-    gap: 16px;
-  }
+
 }
 
 
 @media screen and (max-width: 480px) {
+
   .content-container{
     max-width: 92%;
     min-width: 312px;
+  }
+
+    /* List container */
+  .lists-container{
+    width: 100%;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-auto-rows: auto;
+    gap: 20px;
+  }
+
+
+  /* dashboard footer */
+  .footer_dashboard{
+    width: 100%;
+    font-size: 0.85rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+    color: var(--colors-content-secondary-body, #4F516D);
+    padding: 8px 12px 8px 12px;
+    border-top: 1px solid var(--lp-colors-border-subtle);
+    background-color: var(--lp-colors-base-contrast);
+    backdrop-filter: blur(6px);
   }
 }

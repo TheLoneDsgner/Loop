@@ -7,7 +7,6 @@
     gap: 8px;
     padding: 12px 8px;
     border: 1px solid transparent;
-    /* border-bottom: 1px solid var(--lp-colors-border-subtle); */
     transition: all 0.2s ease-in;
 }
 .list-item:hover{
@@ -59,6 +58,7 @@
 
 /* List item card */
 .list-item_card{
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -67,6 +67,8 @@
   justify-content: start;
   align-items: center;
   border-bottom: 1px solid transparent;
+  cursor: pointer;
+      /* transition: width 0.3s ease-in-out; */
 }
 .list-item_card:hover{
   background-color: var(--lp-colors-base-contrast);
@@ -91,4 +93,68 @@
   line-height: 1.4rem;
   font-weight: 500;
   color: var(--lp-colors-content-title);
+  transition: color 0.3s ease-in-out;
+}
+
+/* .list-item_card p::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background-color: var(--lp-colors-content-secondary);
+    width: 0;
+    transition: width 0.3s ease-in-out;
+} */
+
+/* .strikethrough {
+  color: var(--lp-colors-content-secondary);
+ 
+} */
+
+/* .list-item_card p.strikethrough::after {
+  width: 100%;
+  border: 2px solid var(--lp-colors-content-secondary);
+} */
+
+/* .stoke{
+  height: 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  opacity: 0.2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+} */
+
+.stroke-checked{
+  position: absolute;
+  left: 36px;
+  height: 2px;
+  width: 84%;
+  background-color: var(--lp-colors-border-primary-subtle);
+  display: flex;
+
+  transform: scaleX(50px);
+  transform-origin: left;
+  transition: width 0.3s ease-in-out;
+}
+
+.stroke-none{
+  position: absolute;
+  left: 36px;
+  height: 2px;
+  width: 0;
+  background-color: var(--lp-colors-border-disabled-inactive);
+  display: flex;
+  transform: scaleX(100px);
+  transform-origin: right;
+  transition: width 0.3s ease-in-out;
+}
+.list-item_card .text-checked{
+  color: var(--lp-colors-content-disabled-inactive);
 }

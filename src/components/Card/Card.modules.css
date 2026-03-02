@@ -117,3 +117,11 @@
     border: 1px solid var(--lp-colors-border-subtle);
     text-transform: capitalize;
 }
+
+
+@media screen and (max-width: 786px) {
+    .list-card:hover{
+        box-shadow: none;
+    }
+    
+}

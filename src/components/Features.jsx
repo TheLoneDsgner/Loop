@@ -7,7 +7,7 @@ import logoIcon from '../assets/images/Logo-icon.svg'
 
 const Features = () => {
   return ( 
-    <div className="features-section">
+    <div className="features-section" id="features">
       <div className="features-container">
         <div className="features-title_wrapper">
           <h2>Create, share, and access your lists in your browser.</h2>

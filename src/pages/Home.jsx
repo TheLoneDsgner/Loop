@@ -5,8 +5,21 @@ import HighlightSection from "../components/Highlight";
 import FooterAndCta from "../components/FooterAndCta";
 import Button from "../components/Button/Button";
 import { ArrowRight, Menu } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Home = () => {
+    const location = useLocation()
+
+    useEffect(() => {
+        if (location.state?.scrollTo === 'features') {
+            const element = document.getElementById('features')
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' })
+            }
+        }
+    }, [location])
+
     return ( 
         <div className="home">
 

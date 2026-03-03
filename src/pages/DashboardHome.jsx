@@ -8,11 +8,36 @@ import useLoops from "../components/useLoops";
 import Overlay from "../components/Modals/Overlay";
 import PreviewItem from "../components/Modals/PreviewList";
 import ModalShare from '../components/Modals/ModalShare';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ErrorModal from "../components/EdgeCases/ErrorModal"
+import modalImage from "../assets/icons/Modal_img-library-icon.svg"
 
 
 const DashboardHome = () => {
     const [loops] = useLoops();
+    const [showLoadError, setShowLoadError] = useState(false);
+
+    useEffect(() => {
+        const handleNetworkChange = () => {
+            if (!navigator.onLine) {
+                setShowLoadError(true);
+            }
+        };
+
+        window.addEventListener('online', handleNetworkChange);
+        window.addEventListener('offline', handleNetworkChange);
+
+        if (!navigator.onLine) {
+            setShowLoadError(true);
+        }
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+
+        return () => {
+            window.removeEventListener('online', handleNetworkChange);
+            window.removeEventListener('offline', handleNetworkChange);
+        };
+    }, []);
+
     const yourLists = loops.filter(loop => loop.category === 'Your list');
     const [showPreviewModal, setShowPreviewModal] = useState(false);
     const [showShareModal, setShowShareModal] = useState(false);
@@ -152,10 +177,22 @@ const DashboardHome = () => {
                     
                 </ModalShare>
             )}
+
+            <ErrorModal 
+                isOpen={showLoadError}
+                onClose={() => setShowLoadError(false)}
+                title="Something is wrong"
+                description="We couldn’t load this list right now."
+                modalImage={modalImage}
+                actionButtonText="Try again"
+                onActionButtonClick={() => {
+                    if (navigator.onLine) {
+                        setShowLoadError(false);
+                    }
+                }}
+            />
         </div>
      );
 }
  
 export default DashboardHome;
-
-// onClose={handleClosePreviewModal}

@@ -56,6 +56,88 @@
 .nav-links .nav-link_item:hover{
   color: var(--lp-colors-content-title-text-primary);
 }
+
+.nav-link_item_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.desktop-popover {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  padding-top: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  width: 900px;
+}
+
+@media screen and (max-width: 1024px) {
+  .desktop-popover {
+    max-width: 700px;
+  }
+}
+
+.nav-link_item_wrapper:hover .desktop-popover {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) scale(1);
+}
+
+.popover-content {
+  background-color: var(--lp-colors-bg-grey-subtle);
+  border: 1px solid var(--lp-colors-border-subtle);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.nav-drop-down_desktop {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.large-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--lp-colors-bg-primary);
+}
+.large-section span{
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 20px;
+  color: var(--lp-colors-base-light);
+}
+
+
+.nav-drop-down_desktop .features-nav-drop-down {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.nav-drop-down_desktop .feature-card_mobile {
+  width: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop-popover {
+    display: none;
+  }
+}
+
 .nav-left-items{
     width: fit-content;
 }
@@ -123,21 +205,39 @@
 .user-profile{
   display: flex;
   flex-shrink: 0;
-  width: fit-content;
+  width: 32px;
+  height: 32px;
   align-items: center;
+  justify-content: center;
   border-radius: 99px;
   background-color: var(--lp-colors-bg-grey-subtle);
+  border: 1.5px solid var(--lp-colors-border-subtle);
   color: var(--lp-colors-icon-default);
-  padding: 8px;
+  overflow: hidden;
   transition: all 0.2s ease-in;
 }
 .user-profile:hover{
   background-color: var(--lp-colors-bg-grey-light);
 }
 
-/* .back-btn-dash{
-    width: 32px;
-} */
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: fadeInScale 0.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 /* Nav menu mobile */
 .nav-menu_overlay{

@@ -43,7 +43,7 @@ const NavBar = ({navButton, navMenu}) => {
                         <div className="nav-link_item_wrapper">
                             <a href="#" className="nav-link_item">How It Works</a>
                             
-                            <div className="desktop-popover">
+                            {/* <div className="desktop-popover">
                                 <div className="popover-content">
                                     <div className="nav-drop-down_desktop">
                                         <div className="large-section">
@@ -56,14 +56,17 @@ const NavBar = ({navButton, navMenu}) => {
                                                 <span>Browser-native lists</span>
                                                 <p>Create a list right in your browser. It opens in a new tab or sidebar and is ready to type.</p>
                                             </div>
+                                            
                                             <div className="feature-card_mobile">
                                                 <span>Share with a link</span>
                                                 <p>Copy a link and send it to anyone. They can open the list and start checking items right away.</p>
                                             </div>
+
                                             <div className="feature-card_mobile">
                                                 <span>Always in sync</span>
                                                 <p>Changes update instantly across devices, so everyone sees the same list at the same time.</p>
                                             </div>
+
                                             <div className="feature-card_mobile">
                                                 <span>Private by default</span>
                                                 <p>Your lists stay local to your browser until you choose to share them.</p>
@@ -71,7 +74,7 @@ const NavBar = ({navButton, navMenu}) => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

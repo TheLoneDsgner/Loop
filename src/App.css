@@ -117,7 +117,6 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    /* width: fit-content; */
 }
 .hero-actions a{
   text-decoration: none;
@@ -143,7 +142,7 @@
     position: absolute;
     width: 100%;
     max-width: 890px;
-    z-index: 1;
+    z-index: 999;
 }
 
 /* features */

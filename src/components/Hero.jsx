@@ -1,7 +1,7 @@
 import Button from './Button/Button';
 import { ArrowRight } from 'lucide-react';
 import heroMockup from '../assets/images/Loop-mockup_home1.png'
-import logoMarkHalf from '../assets/images/Logo-mark-half_loop.svg'
+import logoMarkHalf from '../assets/images/logo-mark-half_loop.png'
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -46,7 +46,9 @@ const Hero = () => {
             <div className="hero-image-container">
 
                 <img src={heroMockup} alt="loop mockup" className="hero-mockup-img" />
+
                 <img src={logoMarkHalf} alt="loop logo mark" className="loop-logo-mark-half-svg" />
+
             </div>
         </div>
      );

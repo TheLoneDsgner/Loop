@@ -92,8 +92,7 @@ const NavBar = ({navButton, navMenu}) => {
                         </div>
                     </div>                               
                 
-                </div>
-            
+                </div>            
             </nav>
 
             <div className="nav-menu_mobile-container">
